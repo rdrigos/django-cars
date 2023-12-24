@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  sql_server:
+    image: mcr.microsoft.com/mssql/server
+    container_name: sql_server
+    restart: always
+    environment:
+      SA_PASSWORD: "18o3!9RC@"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_server_data:/var/lib/sql_server/data
+
+volumes:
+  sql_server_data:
